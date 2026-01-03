@@ -19,6 +19,9 @@ console.log('- NODE_ENV:', process.env.NODE_ENV);
 import interviewRoutes from './routes/interview.js';
 import ragRoutes from './routes/rag.js';
 import toolsRoutes from './routes/tools.js';
+import chatRoutes from './routes/chat.js';
+//import writingRoutes from './routes/writing.js';
+import mentalHealthRoutes from './routes/mental-health.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -31,6 +34,9 @@ app.use(express.json());
 app.use('/api/interview', interviewRoutes);
 app.use('/api/rag', ragRoutes);
 app.use('/api/tools', toolsRoutes);
+app.use('/api/chat', chatRoutes);
+//app.use('/api/writing', writingRoutes);
+app.use('/api/mental-health', mentalHealthRoutes);
 
 // Test endpoint
 app.get('/api/test', (req, res) => {
